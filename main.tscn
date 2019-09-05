@@ -42,6 +42,7 @@ text = "Hello!
 This is a story game of LoopyGame!
 We hope you have fun from this game.
 Can I ask your name please?"
+autowrap = true
 
 [node name="TextEdit" type="TextEdit" parent="."]
 margin_left = 39.0

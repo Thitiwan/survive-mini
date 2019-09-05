@@ -1,26 +1,52 @@
 extends Control
 
 var story = "Hello my name is %s I'm %s years old.I like  playing %s character %s My favorite character is %s I %s"
-var answers = ["Aom", "21", "male", "Sword", "Can" ]
+var answers = []
 var questions = []
 
+var question_number = 0
+
 func _ready():
-	print ( story % answers)
+
 	$"VBoxContainer/DisplayText".text = "Welcome!!! \nWhat is your name"
 	
-	questions.append("Welcome!!! \nWhat is your name?")
+	questions.append("What is your name?")
 	questions.append("How old are you?")
 	questions.append("Do you like playing male or female characters?")
 	questions.append("What is your favorite character?")
 	questions.append("Do you think you can survive in this game?")
-	print(questions)
-	print(len(questions))
-	print(questions[0]) #first question
-	print(questions[1])
-	print(questions[2])
-	print(questions[3])
-	print(questions[4])
-
+	
 
 func _on_TextureButton_pressed():
-	$"VBoxContainer/DisplayText".text  = $"TextEdit".text
+	
+	if question_number == 0:
+		# answer the question
+		answers.append( $TextEdit.text )
+		print( answers )
+		$"VBoxContainer/DisplayText".text  = questions[1]
+
+
+	if question_number == 1:
+		# answer the question
+		answers.append( $TextEdit.text )
+		print( answers )
+		$"VBoxContainer/DisplayText".text  = questions[2]
+
+
+	if question_number == 2:
+		# answer the question
+		answers.append( $TextEdit.text )
+		print( answers )
+		$"VBoxContainer/DisplayText".text  = questions[3]
+
+
+	if question_number == 3:
+		# answer the question
+		answers.append( $TextEdit.text )
+		print( answers )
+		$"VBoxContainer/DisplayText".text  = questions[4]
+		$TextEdit.text = ""
+
+	question_number += 1
+
+
